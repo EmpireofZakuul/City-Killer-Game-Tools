@@ -16,7 +16,7 @@ public class EnemyAI : MonoBehaviour
     private float Health;
     public float Speed;
 
-    public Animator Animator;
+   // public Animator Animator;
    
 
 
@@ -72,7 +72,7 @@ public class EnemyAI : MonoBehaviour
     {
         waitTime = startWaitTime;
         randomWaypoints = Random.Range(0, waypoints.Length);
-        Animator = GetComponent<Animator>();
+       // Animator = GetComponent<Animator>();
     }
 
     // Descision tree
@@ -199,7 +199,7 @@ public class EnemyAI : MonoBehaviour
     //ai moves randomly between the waypoints
     void Patrol()
     {
-        Animator.SetBool("Run", true);
+       // Animator.SetBool("Run", true);
         nav.SetDestination(waypoints[randomWaypoints].position);
         if (Vector3.Distance(transform.position, waypoints[randomWaypoints].position) < 2.0f)
         {

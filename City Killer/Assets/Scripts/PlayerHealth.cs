@@ -8,8 +8,8 @@ public class PlayerHealth : MonoBehaviour
 {
 
 
-    public float startHealth = 100f;
-    private  float health;
+    public float maxHealth = 100f;
+    public static float health;
     public Image HealthBar;
     bool Death = true;
 
@@ -19,22 +19,35 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         HealthBar = GetComponent<Image>();
-        health = startHealth;
+        health = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        HealthBar.fillAmount = health/ startHealth;
-        if (health < 0)
+
+       
+        HealthBar.fillAmount = health / maxHealth;
+        if (health <= 0)
         {
             Die();
             Death = false;
-
         }
 
     }
+/*
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+        HealthBar.fillAmount = health / maxHealth;
+        if (health <= 0)
+        {
+            Die();
+            Death = false;
+        }
+    }
+    */
     void Die()
     {
         if (health < 0 && !Death)
@@ -43,5 +56,7 @@ public class PlayerHealth : MonoBehaviour
             SceneManager.LoadScene("Lose");
             Death = true;
         }
+
+
     }
 }
