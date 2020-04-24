@@ -6,19 +6,22 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float health = 50f;
+    public Animator Animator;
+    public float startHealth = 1000f;
     public Image HealthBar;
+    private float health;
     //public float Health;
 
 
     public void Start()
     {
-        //Health = health;
+        health = startHealth;
+        Animator = GetComponent<Animator>();
     }
     public void damagetaken(float amount)
     {
         health -= amount;
-        HealthBar.fillAmount = health / health;
+        HealthBar.fillAmount = health / startHealth;
         if (health <= 0)
         {
             Die();
@@ -28,9 +31,10 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
 
-       
+        
+        Animator.SetTrigger("Dead");
+        Destroy(gameObject, 5f);
     }
 
    

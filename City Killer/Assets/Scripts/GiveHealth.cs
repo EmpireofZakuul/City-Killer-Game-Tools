@@ -19,9 +19,9 @@ public class GiveHealth : MonoBehaviour
     {
 
 
-        if (collison.tag == "Player")
-        {
-            PlayerHealth.health += 25f;
-            Destroy(gameObject);
-        }
-    }  }
+        //if (collison.tag == "Player")
+        // {
+        // PlayerHealth.health += 25f;
+        // Destroy(gameObject);
+        // }
+    } } // }

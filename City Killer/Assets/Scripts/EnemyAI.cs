@@ -7,16 +7,17 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    private GameObject player;
-    private GameObject Base;
+    public GameObject player;
+    public Transform Base;
 
 
     public float startspeed = 5f;
     public float range = 5f;
     private float Health;
     public float Speed;
-    public NavMeshAgent brain;
 
+    public Animator Animator;
+   
 
 
     //ai view
@@ -62,7 +63,7 @@ public class EnemyAI : MonoBehaviour
     {
         nav = GetComponent<NavMeshAgent>();
         nav.enabled = true;
-        //Base = GameObject.FindGameObjectWithTag("Base");
+        
     }
 
 
@@ -71,11 +72,13 @@ public class EnemyAI : MonoBehaviour
     {
         waitTime = startWaitTime;
         randomWaypoints = Random.Range(0, waypoints.Length);
+        Animator = GetComponent<Animator>();
     }
 
     // Descision tree
     void Update()
     {
+       
         float distance = Vector3.Distance(PlayerMovement.playerPos, transform.position);
 
         if (distance <= lineOfSightRadius)
@@ -109,8 +112,7 @@ public class EnemyAI : MonoBehaviour
             }
         }
         player = GameObject.FindGameObjectWithTag("Player");
-        brain.speed = Speed;
-        Speed = startspeed;
+       
 
 
     }
@@ -153,6 +155,7 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
+
     //check line of sight
     void CheckLos()
     {
@@ -196,7 +199,7 @@ public class EnemyAI : MonoBehaviour
     //ai moves randomly between the waypoints
     void Patrol()
     {
-        
+        Animator.SetBool("Run", true);
         nav.SetDestination(waypoints[randomWaypoints].position);
         if (Vector3.Distance(transform.position, waypoints[randomWaypoints].position) < 2.0f)
         {
@@ -211,7 +214,10 @@ public class EnemyAI : MonoBehaviour
             }
         }
         
-        //brain.destination = Base.transform.position;
+        //nav.SetDestination(Base.position);
+
+
+
     }
 
     void ChasePlayer()
@@ -253,6 +259,18 @@ public class EnemyAI : MonoBehaviour
         Vector3 direction = (PlayerMovement.playerPos - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * facePlayerFactor);
+    }
+
+    public void LateUpdate()
+    {
+        if(aiMemerizesPlayerPosition ==  true && PlayerLineOfSight == false)
+        {
+            distanceToPlayer = 0.5f;
+        }
+        else
+        {
+            distanceToPlayer = 10.0f;
+        }
     }
 
     void OnTriggerEnter(Collider other)

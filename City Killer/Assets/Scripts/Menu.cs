@@ -19,26 +19,26 @@ public class Menu : MonoBehaviour
 
     public void PlayGamelevel()
     {
-        SceneManager.LoadScene("GameLevel");
-       // SceneFader.FadTo("GameLevel");
+        //SceneManager.LoadScene("GameLevel");
+        SceneFader.FadTo("GameLevel");
     }
 
     public void GameMenuCredits()
     {
-         SceneManager.LoadScene("Credits");
-        //SceneFader.FadTo("Credits");
+        // SceneManager.LoadScene("Credits");
+        SceneFader.FadTo("Credits");
     }
 
     public void GameMenuControls()
     {
-        SceneManager.LoadScene("Controls");
-        //SceneFader.FadTo("Controls");
+        //SceneManager.LoadScene("Controls");
+        SceneFader.FadTo("Controls");
     }
 
     public void GameObjectives()
     {
-        SceneManager.LoadScene("HowToPlay");
-        //SceneFader.FadTo("HowToPlay");
+        //SceneManager.LoadScene("HowToPlay");
+        SceneFader.FadTo("HowToPlay");
     }
 
 

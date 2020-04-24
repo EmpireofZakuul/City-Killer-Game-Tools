@@ -8,8 +8,8 @@ public class PlayerHealth : MonoBehaviour
 {
 
 
-    public float maxHealth = 100f;
-    public static float health;
+    public float startHealth = 100f;
+    private  float health;
     public Image HealthBar;
     bool Death = true;
 
@@ -19,14 +19,14 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         HealthBar = GetComponent<Image>();
-        health = maxHealth;
+        health = startHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        HealthBar.fillAmount = health / maxHealth;
+        HealthBar.fillAmount = health/ startHealth;
         if (health < 0)
         {
             Die();
