@@ -12,6 +12,9 @@ public class Gun : MonoBehaviour
     public float fireRate = 15f;
     public float hitForce = 60f;
     private float nextTimeToFire = 0f;
+    public GameObject bullet;
+    public Rigidbody projectile;
+    public float speed = 20;
 
     // Update is called once per frame
     void Update()
@@ -23,26 +26,38 @@ public class Gun : MonoBehaviour
         }
     }
 
+
+    // Update is called once per frame
+ 
+
     public void Shoot()
     {
+        Rigidbody instantiatedProjectile = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
+        instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
+      /*
         RaycastHit hit;
-       if( Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
-       {
+        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
+        {
             muzzleFlash.Play();
             Debug.Log(hit.transform.name);
             EnemyHealth health = hit.transform.GetComponent<EnemyHealth>();
-            if(health != null)
+            if (health != null)
             {
                 health.damagetaken(damage);
             }
 
-            if(hit.rigidbody != null)
+            if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * hitForce);
             }
 
-          GameObject gameObject =  Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            GameObject gameObject = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(gameObject, 2f);
-       }
-    }
+        }
+        */
+
+    
+    
+ }
+       
 }

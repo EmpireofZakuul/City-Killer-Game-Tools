@@ -1,42 +1,51 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
-  //  public Animator Animator;
-    public float startHealth = 1000f;
+    public float maxHealth = 100f;
+    public static float health;
     public Image HealthBar;
-    private float health;
-    //public float Health;
-    public GameObject enemy;
+    bool Death = true;
 
 
-    public void Start()
+
+
+    void Start()
     {
-        health = startHealth;
-        //Animator = GetComponent<Animator>();
+        HealthBar = GetComponent<Image>();
+        health = maxHealth;
     }
-    public void damagetaken(float amount)
+
+    // Update is called once per frame
+    void Update()
     {
-        health -= amount;
-        HealthBar.fillAmount = health / startHealth;
+
+
+
+        HealthBar.fillAmount = health / maxHealth;
         if (health <= 0)
         {
             Die();
+            Death = false;
         }
 
     }
-
-    public void Die()
+ 
+    void Die()
     {
+        if (health < 0 && !Death)
+        {
 
-        
-        //Animator.SetTrigger("Dead");
-        Destroy(enemy);
+            SceneManager.LoadScene("Win");
+            Death = true;
+        }
+
+
     }
 
-   
+
 }

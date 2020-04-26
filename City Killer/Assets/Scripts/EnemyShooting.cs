@@ -11,7 +11,9 @@ public class EnemyShooting : MonoBehaviour
     public float timeBetweenShots;
     public float nextFire;
     public GameObject firePoint;
-  
+
+    public Rigidbody projectile;
+    public float speed = 20;
 
 
 
@@ -37,7 +39,8 @@ public class EnemyShooting : MonoBehaviour
        
         if(Time.time < nextFire)
         {
-           firePoint =  Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            Rigidbody instantiatedProjectile = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
+            instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
             nextFire = Time.time + timeBetweenShots;
         }
        

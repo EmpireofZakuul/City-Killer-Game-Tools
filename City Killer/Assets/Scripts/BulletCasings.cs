@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class healthremover : MonoBehaviour
+public class BulletCasings : MonoBehaviour
 {
-   // public float damageAmount = 10f;
+    public GameObject bulletCasings;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,17 +14,9 @@ public class healthremover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void OnTriggerEnter (Collider other)
-    {
-
-        if (other.gameObject.tag=="Player"){
-            PlayerHealth.health -= 12f;
+        if (Input.GetButton("Fire1"))
+        {
+            Instantiate(bulletCasings, transform.position, transform.rotation);
         }
-
     }
-
-    
 }

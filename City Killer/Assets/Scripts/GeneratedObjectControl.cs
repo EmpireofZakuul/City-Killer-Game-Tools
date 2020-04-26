@@ -22,6 +22,11 @@ public class GeneratedObjectControl : MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+        Generate();
+    }
+
     public void AddObject(GameObject objectToAdd)
     {
         generatedObjects.Add(objectToAdd);
@@ -30,17 +35,17 @@ public class GeneratedObjectControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            ClearAllObjects();
-            Generate();
+        //if (Input.GetKeyDown(KeyCode.T))
+       // {
+            //ClearAllObjects();
+           // Generate();
 
-        }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(0);
-        }
+       // if (Input.GetKeyDown(KeyCode.R))
+       //// {
+            //SceneManager.LoadScene(0);
+       // }
 
     }
 
