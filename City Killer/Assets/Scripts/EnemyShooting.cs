@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyShooting : MonoBehaviour
 {
-
+    public EnemyMovement EnemyMovement;
     public GameObject player;
     public GameObject bulletPrefab;
     public float timeBetweenShots;
@@ -14,6 +14,9 @@ public class EnemyShooting : MonoBehaviour
 
     public Rigidbody projectile;
     public float speed = 20;
+    public Transform target;
+    private float nextTimeToFire = 5f;
+    public float fireRate = 2f;
 
 
 
@@ -29,22 +32,33 @@ public class EnemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       Shooting();
+        float distance = Vector3.Distance(target.position, transform.position);
+        if (distance <= EnemyMovement.stopRadius && Time.time >= nextTimeToFire)
+        {
+            nextTimeToFire = Time.time + 1 / fireRate;
+            Shooting();
+        }
+       
     }
 
     public void Shooting()
     {
-      
-       
-        if(Time.time < nextFire)
-        {
-            Rigidbody instantiatedProjectile = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
-            instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
-            nextFire = Time.time + timeBetweenShots;
-        }
-       
-        
+
+
+        Rigidbody instantiatedProjectile = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
+        instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
+
+
+
+
+        // if(Time.time < nextFire)
+        // {
+        //  Rigidbody instantiatedProjectile = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
+        // instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
+        //  nextFire = Time.time + timeBetweenShots;
+        //}
+
+
     }
 }
 

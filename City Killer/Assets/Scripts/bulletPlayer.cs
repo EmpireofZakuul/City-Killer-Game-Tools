@@ -26,6 +26,11 @@ public class bulletPlayer : MonoBehaviour
             EnemyHealth.health -= 12f;
         }
 
+        if (other.gameObject.tag == "Player")
+        {
+            PlayerHealth.health -= 12f;
+        }
+
     }
 
 

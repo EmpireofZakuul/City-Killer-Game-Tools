@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public static float health;
     public Image HealthBar;
     bool Death = true;
+    public GameObject thisEnemy;
 
 
 
@@ -31,16 +32,17 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
             Death = false;
+           
         }
 
     }
  
-    void Die()
+   void Die()
     {
-        if (health < 0 && !Death)
+        if (health <= 0 && !Death)
         {
-
-            SceneManager.LoadScene("Win");
+            Destroy(thisEnemy);
+            //SceneManager.LoadScene("Win");
             Death = true;
         }
 
