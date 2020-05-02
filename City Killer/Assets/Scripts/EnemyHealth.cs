@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float maxHealth = 100f;
-    public static float health;
+
+    //public float maxHealth = 3f;
+    //public static float health;
+    public float health = 3f;
     public Image HealthBar;
     bool Death = true;
     public GameObject thisEnemy;
+    public bool dead = true;
 
 
 
@@ -18,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         HealthBar = GetComponent<Image>();
-        health = maxHealth;
+        //health = maxHealth;
     }
 
     // Update is called once per frame
@@ -26,27 +29,47 @@ public class EnemyHealth : MonoBehaviour
     {
 
 
-
-        HealthBar.fillAmount = health / maxHealth;
-        if (health <= 0)
+        if (health == 0 && dead == true)
         {
             Die();
-            Death = false;
-           
-        }
 
+            //HealthBar.fillAmount = health / maxHealth;
+            //if (health <= 0)
+            // {
+            // Die();
+            // Death = false;
+
+            // }
+
+        }
     }
  
-   void Die()
-    {
-        if (health <= 0 && !Death)
-        {
-            Destroy(thisEnemy);
+  // void Die()
+    //{
+        //if (health <= 0 && !Death)
+       // {
+           // Destroy(thisEnemy);
             //SceneManager.LoadScene("Win");
-            Death = true;
-        }
+          //  Death = true;
+        //}
 
 
+   // }
+
+    public void TakeDamage2(int damage)
+    {
+        health -= damage;
+        dead = true;
+
+
+        Debug.Log("damage Taken");
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+        dead = false;
+       
     }
 
 

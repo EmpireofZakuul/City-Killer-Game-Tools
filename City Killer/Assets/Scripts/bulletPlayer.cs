@@ -4,34 +4,54 @@ using UnityEngine;
 
 public class bulletPlayer : MonoBehaviour
 {
+   
     public static int BulletDamage;
-    public int damage = 10;
+    public int damage = 1;
+
+    public static int Damage;
+    public int damagePlay = 1;
+
+    private Transform enemy;
     void Start()
     {
-        
+        BulletDamage = damage;
+        Damage = damagePlay;
+
     }
 
-   
 
-// Update is called once per frame
+
+
+    // Update is called once per frame
     void Update()
     {
         Destroy(gameObject, 4f);
     }
+
+  
     public void OnTriggerEnter(Collider other)
     {
-
+        EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage2(damage);
+            Destroy(gameObject, .1f);
+        }
+        /*
         if (other.gameObject.tag == "Enemy")
         {
             EnemyHealth.health -= 12f;
+            //Damage();
         }
-
+        */
         if (other.gameObject.tag == "Player")
         {
-            PlayerHealth.health -= 12f;
+            PlayerHealth.health -= damagePlay;
         }
+        
 
     }
+    
 
 
 }

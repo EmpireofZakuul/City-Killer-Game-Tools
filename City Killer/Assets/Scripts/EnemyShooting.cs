@@ -14,7 +14,7 @@ public class EnemyShooting : MonoBehaviour
 
     public Rigidbody projectile;
     public float speed = 20;
-    public Transform target;
+           Transform target;
     private float nextTimeToFire = 5f;
     public float fireRate = 2f;
 
@@ -26,12 +26,13 @@ public class EnemyShooting : MonoBehaviour
     {
         timeBetweenShots = 0.25f;
         nextFire = Time.time;
-
+        target = playerManager.instance.player.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        target = playerManager.instance.player.transform;
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= EnemyMovement.stopRadius && Time.time >= nextTimeToFire)
         {

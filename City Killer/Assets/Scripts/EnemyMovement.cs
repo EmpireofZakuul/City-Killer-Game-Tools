@@ -2,38 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
     public float lookRadius = 20f;
     public float stopRadius = 10f;
     public NavMeshAgent nav;
-    public Transform target;
-    public GameObject Base;
-    public Transform playerCharacter;
+           Transform target;
+   // public Transform playerCharacter;
     public float originalSpeed = 5;
     public static float maxSpeed;
-    public Rigidbody projectile;
     public float speed = 20;
     // Start is called before the first frame update
     private GameObject player;
+            //Transform basePlayer;
+    private GameObject Base;
 
-        void Start()
+ 
+    void Start()
         {
-            target = playerManager.instance.player.transform;
-            nav.GetComponent<NavMeshAgent>();
+        Base = GameObject.FindGameObjectWithTag("Base");
+        player = GameObject.FindGameObjectWithTag("Player");
+        target = playerManager.instance.player.transform;
+        //basePlayer = BaseManager.instance.Base.transform;
+        nav.GetComponent<NavMeshAgent>();
             originalSpeed = maxSpeed;
-            Base = GameObject.FindGameObjectWithTag("Base");
-            player = GameObject.FindGameObjectWithTag("Player");
-        }
+            
+          
+    }
 
     // Update is called once per frame
     void Update()
     {
-      
-        nav.SetDestination(Base.transform.position);
+       
+       // float distanceBase = Vector3.Distance(basePlayer.position, transform.position);
+        //if (distanceBase >= lookRadius)
+       // {
+           // nav.SetDestination(basePlayer.position);
+        //}
 
+        // this all works, below this
         float distance = Vector3.Distance(target.position, transform.position);
+    
+      
         if (distance <= lookRadius)
         {
             nav.SetDestination(target.position);
@@ -70,9 +82,6 @@ public class EnemyMovement : MonoBehaviour
                 nav.SetDestination(target.position);
                 nav.speed = originalSpeed;
             }
-
-
-          
         }
     }
 
@@ -86,14 +95,5 @@ public class EnemyMovement : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, stopRadius);
     }
 
-   // public void OnTriggerEnter(Collider other)
-    //{
-
-       // if (other.gameObject.tag == "Bullet")
-       // {
-          //  EnemyHealth.health -= 12f;
-       // }
-
-       
-   // }
+   
 }
