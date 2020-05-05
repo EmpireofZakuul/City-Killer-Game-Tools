@@ -8,13 +8,13 @@ public class PerlinNoise : MonoBehaviour
 {
     public static PerlinNoise instance = null;
 
-    public int perlinTextureSizeX;
-    public int perlinTextureSizeY;
-    public bool randomizeNoiseOffset;
-    public Vector2 perlinOffset;
-    public float noiseScale = 1f;
-    public int perlinGridStepSizeX = 4;
-    public int perlinGridStepSizeY = 4;
+    public int perlinTextureXAxis;
+    public int perlinTextureYAxis;
+    public bool randomizeNoise;
+    public Vector2 offsetOfThePerlin;
+    public float scaleOfTheNoise = 1f;
+    public int perlinGridSizeXAxis = 4;
+    public int perlinGridSizeYAxis = 4;
 
     public bool visualizeGrid = false;
     public GameObject visualizationCube;
@@ -26,6 +26,7 @@ public class PerlinNoise : MonoBehaviour
 
     void Awake()
     {
+       
         if (instance == null)
         {
             instance = this;
@@ -47,16 +48,16 @@ public class PerlinNoise : MonoBehaviour
 
     void GenerateNoise()
     {
-        if (randomizeNoiseOffset)
+        if (randomizeNoise)
         {
-            perlinOffset = new Vector2(Random.Range(0, 99999), Random.Range(0, 99999));
+            offsetOfThePerlin = new Vector2(Random.Range(0, 99999), Random.Range(0, 99999));
         }
 
-        perlinTexture = new Texture2D(perlinTextureSizeX, perlinTextureSizeY);
+        perlinTexture = new Texture2D(perlinTextureXAxis, perlinTextureYAxis);
 
-        for (int x = 0; x < perlinTextureSizeX; x++)
+        for (int x = 0; x < perlinTextureXAxis; x++)
         {
-            for (int y = 0; y < perlinTextureSizeY; y++)
+            for (int y = 0; y < perlinTextureYAxis; y++)
             {
                 perlinTexture.SetPixel(x, y, SampleNoise(x, y));
             }
@@ -68,8 +69,8 @@ public class PerlinNoise : MonoBehaviour
 
     Color SampleNoise(int x, int y)
     {
-        float xCoord = (float)x / perlinTextureSizeX * noiseScale + perlinOffset.x;
-        float yCoord = (float)y / perlinTextureSizeY * noiseScale + perlinOffset.y;
+        float xCoord = (float)x / perlinTextureXAxis * scaleOfTheNoise + offsetOfThePerlin.x;
+        float yCoord = (float)y / perlinTextureYAxis * scaleOfTheNoise + offsetOfThePerlin.y;
 
         float sample = Mathf.PerlinNoise(xCoord, yCoord);
         Color perlinColor = new Color(sample, sample, sample);
@@ -79,8 +80,8 @@ public class PerlinNoise : MonoBehaviour
 
     public float SampleStepped(int x, int y)
     {
-        int gridStepSizeX = perlinTextureSizeX / perlinGridStepSizeX;
-        int gridStepSizeY = perlinTextureSizeY / perlinGridStepSizeY;
+        int gridStepSizeX = perlinTextureXAxis / perlinGridSizeXAxis;
+        int gridStepSizeY = perlinTextureYAxis / perlinGridSizeYAxis;
 
         float sampledFloat = perlinTexture.GetPixel
                    ((Mathf.FloorToInt(x * gridStepSizeX)), (Mathf.FloorToInt(y * gridStepSizeX))).grayscale;
@@ -90,11 +91,11 @@ public class PerlinNoise : MonoBehaviour
 
     public float PerlinSteppedPosition(Vector3 worldPosition)
     {
-        int xToSample = Mathf.FloorToInt(worldPosition.x + perlinGridStepSizeX * .5f);
-        int yToSample = Mathf.FloorToInt(worldPosition.z + perlinGridStepSizeY * .5f);
+        int xToSample = Mathf.FloorToInt(worldPosition.x + perlinGridSizeXAxis * .5f);
+        int yToSample = Mathf.FloorToInt(worldPosition.z + perlinGridSizeYAxis * .5f);
 
-        xToSample = xToSample % perlinGridStepSizeX;
-        yToSample = yToSample % perlinGridStepSizeY;
+        xToSample = xToSample % perlinGridSizeXAxis;
+        yToSample = yToSample % perlinGridSizeYAxis;
 
         float sampledValue = SampleStepped(xToSample, yToSample);
 
@@ -106,9 +107,9 @@ public class PerlinNoise : MonoBehaviour
         GameObject visualizationParent = new GameObject("VisualizationParent");
         visualizationParent.transform.SetParent(this.transform);
 
-        for (int x = 0; x < perlinGridStepSizeX; x++)
+        for (int x = 0; x < perlinGridSizeXAxis; x++)
         {
-            for (int y = 0; y < perlinGridStepSizeY; y++)
+            for (int y = 0; y < perlinGridSizeYAxis; y++)
             {
                 GameObject clone = Instantiate(visualizationCube,
                     new Vector3(x, SampleStepped(x, y) * visualizationHeightScale, y)
@@ -120,12 +121,12 @@ public class PerlinNoise : MonoBehaviour
         }
 
         visualizationParent.transform.position =
-            new Vector3(-perlinGridStepSizeX * .5f, -visualizationHeightScale * .5f, -perlinGridStepSizeY * .5f);
+            new Vector3(-perlinGridSizeXAxis * .5f, -visualizationHeightScale * .5f, -perlinGridSizeYAxis * .5f);
     }
 
-    public void SetNoiseScaleFromSlider(Slider slider)
+    public void SetscaleOfTheNoiseFromSlider(Slider slider)
     {
-        noiseScale = slider.value;
+        scaleOfTheNoise = slider.value;
     }
 
 }

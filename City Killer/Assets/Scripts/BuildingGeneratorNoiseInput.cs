@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class BuildingGeneratorNoiseInput : MonoBehaviour
 {
-    public int maxPieces = 20;
+    public int maxNumberOfPieces = 20;
     public float perlinScaleFactor = 2f;
 
     public int randomVariationMin = -5;
     public int randomVariationMax = 10;
-    public GameObject[] baseParts;
-    public GameObject[] middleParts;
-    public GameObject[] topParts;
+    public GameObject[] baseBuildingParts;
+    public GameObject[] middleBuildingParts;
+    public GameObject[] topBuildingParts;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class BuildingGeneratorNoiseInput : MonoBehaviour
     {
         float sampledValue = PerlinNoise.instance.PerlinSteppedPosition(transform.position);
 
-        int targetPieces = Mathf.FloorToInt(maxPieces * (sampledValue));
+        int targetPieces = Mathf.FloorToInt(maxNumberOfPieces * (sampledValue));
         targetPieces += Random.Range(randomVariationMin, randomVariationMax);
 
         if (targetPieces <= 0)
@@ -32,14 +32,14 @@ public class BuildingGeneratorNoiseInput : MonoBehaviour
         }
 
         float heightOffset = 0;
-        heightOffset += SpawnPieceLayer(baseParts, heightOffset);
+        heightOffset += SpawnPieceLayer(baseBuildingParts, heightOffset);
 
         for (int i = 2; i < targetPieces; i++)
         {
-            heightOffset += SpawnPieceLayer(middleParts, heightOffset);
+            heightOffset += SpawnPieceLayer(middleBuildingParts, heightOffset);
         }
 
-        SpawnPieceLayer(topParts, heightOffset);
+        SpawnPieceLayer(topBuildingParts, heightOffset);
     }
 
     float SpawnPieceLayer(GameObject[] pieceArray, float inputHeight)

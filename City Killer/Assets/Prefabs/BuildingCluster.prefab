@@ -43,10 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a015de9f1201f2c4a9d2cb775418b20f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridX: 8
-  gridZ: 8
-  prefabToSpawn: {fileID: 2392433106439533288, guid: 1a26ecfe9eb5cda42833d4a5e4730e77,
+  theXGrid: 8
+  theYGrid: 8
+  spawnPrefab: {fileID: 2392433106439533288, guid: 1a26ecfe9eb5cda42833d4a5e4730e77,
     type: 3}
   gridOrigin: {x: 0, y: 0, z: 0}
-  gridOffset: 1
+  spaceBetweenTheBuildings: 1.2
   generateOnEnable: 1

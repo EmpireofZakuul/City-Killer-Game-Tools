@@ -227,7 +227,6 @@ MonoBehaviour:
   projectile: {fileID: 8817187442723920189, guid: ee7378c184887a449857f71b3adb8bb9,
     type: 3}
   speed: 20
-  target: {fileID: 0}
   fireRate: 2
 --- !u!1 &1706651682882144632
 GameObject:
@@ -524,7 +523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1706651683576570180
 Transform:
   m_ObjectHideFlags: 0
@@ -609,6 +608,7 @@ MonoBehaviour:
   nav: {fileID: 1706651683576570183}
   originalSpeed: 5
   speed: 20
+  baseLocation: {x: 1, y: 0, z: -33}
 --- !u!114 &1706651683576570179
 MonoBehaviour:
   m_ObjectHideFlags: 0

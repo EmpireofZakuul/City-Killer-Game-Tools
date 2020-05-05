@@ -5,10 +5,10 @@ using UnityEngine;
 public class BuildingGenerator : MonoBehaviour
 {
     public int minPieces = 5;
-    public int maxPieces = 20;
-    public GameObject[] baseParts;
-    public GameObject[] middleParts;
-    public GameObject[] topParts;
+    public int maxNumberOfPieces = 20;
+    public GameObject[] baseBuildingParts;
+    public GameObject[] middleBuildingParts;
+    public GameObject[] topBuildingParts;
 
 
     // Start is called before the first frame update
@@ -20,17 +20,17 @@ public class BuildingGenerator : MonoBehaviour
     void Build()
     {
 
-        int targetPieces = Random.Range(minPieces, maxPieces);
+        int targetPieces = Random.Range(minPieces, maxNumberOfPieces);
         float heightOffset = 0;
-        heightOffset += SpawnPieceLayer(baseParts, heightOffset);
+        heightOffset += SpawnPieceLayer(baseBuildingParts, heightOffset);
 
 
         for (int i = 2; i < targetPieces; i++)
         {
-            heightOffset += SpawnPieceLayer(middleParts, heightOffset);
+            heightOffset += SpawnPieceLayer(middleBuildingParts, heightOffset);
         }
 
-        SpawnPieceLayer(topParts, heightOffset);
+        SpawnPieceLayer(topBuildingParts, heightOffset);
     }
 
     float SpawnPieceLayer(GameObject[] pieceArray, float inputHeight)

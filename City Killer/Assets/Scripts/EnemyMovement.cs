@@ -16,34 +16,42 @@ public class EnemyMovement : MonoBehaviour
     public float speed = 20;
     // Start is called before the first frame update
     private GameObject player;
-            //Transform basePlayer;
+            Transform basePlayer;//bases transform
     private GameObject Base;
-
+    public Vector3 baseLocation;
  
     void Start()
         {
         Base = GameObject.FindGameObjectWithTag("Base");
         player = GameObject.FindGameObjectWithTag("Player");
         target = playerManager.instance.player.transform;
-        //basePlayer = BaseManager.instance.Base.transform;
+       // basePlayer = BaseManager.instance.Base.transform;// geting the bases singleton
         nav.GetComponent<NavMeshAgent>();
             originalSpeed = maxSpeed;
-            
-          
+
+       // nav.destination = basePlayer.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-       // float distanceBase = Vector3.Distance(basePlayer.position, transform.position);
-        //if (distanceBase >= lookRadius)
-       // {
-           // nav.SetDestination(basePlayer.position);
-        //}
+        float distance = Vector3.Distance(target.position, transform.position);
+        //wont move towards the players base
+        /*
+         float distanceBase = Vector3.Distance(basePlayer.position, transform.position);
+         if (distanceBase >= lookRadius)
+         {
+             nav.SetDestination(basePlayer.position);
+         }
+         */
+        if(distance >= lookRadius)
+        {
+            nav.SetDestination(baseLocation);
+        }
+        
 
         // this all works, below this
-        float distance = Vector3.Distance(target.position, transform.position);
+       
     
       
         if (distance <= lookRadius)
