@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-	
+
 
 public class waveSpawner : MonoBehaviour
 {
@@ -29,13 +30,14 @@ public class waveSpawner : MonoBehaviour
         if(countdown < 0)
         {
            StartCoroutine(SpawnWave());
+           
             countdown = timeBetweenWave;
             return;
         }
 
         if (waveIndex == waves.Length && Enemiesalive <= 0)
         {
-           // gameManager.WinLevel();
+            SceneManager.LoadScene("Win");
         }
 
         countdown -= Time.deltaTime;
@@ -46,7 +48,7 @@ public class waveSpawner : MonoBehaviour
   IEnumerator SpawnWave()
     {
         
-       // stats.Rounds++;
+        stats.Rounds++;
 
         Wave wave = waves[waveIndex];
 
@@ -58,18 +60,21 @@ public class waveSpawner : MonoBehaviour
             yield return new WaitForSeconds(1f/wave.rate);
             
         }
-        waveIndex++;
+       waveIndex++;
        
         
     }
+  
+   
 
     private void EnemySpawn(GameObject enemy)
     {
         Instantiate(enemy, EnemySpawnPoint.position, EnemySpawnPoint.rotation);
         Instantiate(enemy, EnemySpawnPoint2.position, EnemySpawnPoint.rotation);
-        
+        Instantiate(enemy, EnemySpawnPoint3.position, EnemySpawnPoint.rotation);
 
     }
+  
 
 
 }

@@ -8,7 +8,7 @@ public class SceneFader : MonoBehaviour
 {
     public Image image;
     public AnimationCurve FadeCurve;
-    public void Start()
+    public void Awake()
     {
         StartCoroutine(FadIn());
     }

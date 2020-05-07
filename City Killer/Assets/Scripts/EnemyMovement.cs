@@ -103,5 +103,16 @@ public class EnemyMovement : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, stopRadius);
     }
 
-   
+    void OnTriggerEnter(Collider other)
+    {
+
+        if (other.tag == "Base")
+        {
+           
+            waveSpawner.Enemiesalive--;
+            Destroy(gameObject);
+        }
+
+    }
+
 }
