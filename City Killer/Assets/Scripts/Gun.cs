@@ -15,9 +15,15 @@ public class Gun : MonoBehaviour
     public GameObject bullet;
     public Rigidbody projectile;
     public float speed = 20;
+    public AudioSource source;
+    public AudioClip shot;
 
 
-
+    public void Start()
+    {
+        source = GetComponent<AudioSource>();
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,6 +37,7 @@ public class Gun : MonoBehaviour
     }
     public void Shoot()
     {
+        source.Play();
         Rigidbody instantiatedProjectile = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
         instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
     }

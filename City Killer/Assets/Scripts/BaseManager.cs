@@ -6,19 +6,20 @@ using UnityEngine.SceneManagement;
 public class BaseManager : MonoBehaviour
 {
     public Text Base;
-    public float baseHealth = 10;
-    private  float health;
+    public int baseHealth = 10;
+    public  int health;
     public bool Lost = false;
     public void Start()
     {
         //baseHealth = 10;
         //Base = gameObject.GetComponent<Text>();
-        Base.text = baseHealth.ToString();
+        //Base.text = health.ToString();
         health = baseHealth;
     }
     public void Update()
     {
-        if(baseHealth <= 0 && !Lost)
+        Base.text = baseHealth.ToString() + " / " + health.ToString() ;
+        if (baseHealth <= 0 && !Lost)
         {
             
             SceneManager.LoadScene("Lose");
@@ -32,7 +33,7 @@ public class BaseManager : MonoBehaviour
         if (other.tag == "Enemy")
         {
 
-            baseHealth--;
+            baseHealth-=1;
             
         }
     }

@@ -17,6 +17,8 @@ public class EnemyShooting : MonoBehaviour
            Transform target;
     private float nextTimeToFire = 5f;
     public float fireRate = 2f;
+    public AudioClip shoot;
+    private AudioSource source;
 
 
 
@@ -27,6 +29,8 @@ public class EnemyShooting : MonoBehaviour
         timeBetweenShots = 0.25f;
         nextFire = Time.time;
         target = playerManager.instance.player.transform;
+        source = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class EnemyShooting : MonoBehaviour
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= EnemyMovement.stopRadius && Time.time >= nextTimeToFire)
         {
+           
             nextTimeToFire = Time.time + 1 / fireRate;
             Shooting();
         }
@@ -45,7 +50,7 @@ public class EnemyShooting : MonoBehaviour
     public void Shooting()
     {
 
-
+        source.Play();
         Rigidbody instantiatedProjectile = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
         instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
 
