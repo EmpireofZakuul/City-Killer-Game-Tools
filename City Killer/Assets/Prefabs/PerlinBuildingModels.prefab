@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3812192407826420416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5854187850494275669}
+  - component: {fileID: 9013145863791878002}
+  m_Layer: 0
+  m_Name: PerlinBuildingModels
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5854187850494275669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3812192407826420416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.292286, y: -331.148, z: -261.30035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9013145863791878002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3812192407826420416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301226e44e6977b49943fd5878cfc90f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxNumberOfPieces: 20
+  perlinScaleFactor: 5
+  randomVariationMin: 0
+  randomVariationMax: 0
+  baseBuildingParts:
+  - {fileID: 7286592150976998269, guid: 5564b656159b3064e8f390f06f6dfad6, type: 3}
+  - {fileID: 9037980021171544141, guid: 020b2087ac5dc8247ba66f54290f6635, type: 3}
+  - {fileID: 7638079831606576439, guid: c1e1a8daf5b03b4409a9b9cdbb07e135, type: 3}
+  - {fileID: 6649963319197764087, guid: f3fb064407f83fc488602a6cf34b360c, type: 3}
+  - {fileID: 1401699705947895588, guid: 9c7de8cbc57890d4d96c597c1bd11cf0, type: 3}
+  - {fileID: 4156755062573664585, guid: f8584fbc9addf7042bd320ed33191a2f, type: 3}
+  - {fileID: 1188852744312644774, guid: 74a3507299ea8194a9d389091e943bcd, type: 3}
+  middleBuildingParts:
+  - {fileID: 1035023740221786840, guid: 9dcffc563ff61e640a1ed0f841f5bdd2, type: 3}
+  - {fileID: 7850337309663310354, guid: e92b2567a3ae4fa408fa8ee64e0b4241, type: 3}
+  - {fileID: 9129116580662219850, guid: b720c2c24b114ff4b8f404332b4338f6, type: 3}
+  - {fileID: 1617838013875288392, guid: 8537a99c2370ac543868a489a4931994, type: 3}
+  topBuildingParts:
+  - {fileID: 9129116580662219850, guid: b720c2c24b114ff4b8f404332b4338f6, type: 3}
+  - {fileID: 8057053057514068653, guid: 2b2f12b4e5726e944a9059797e84031c, type: 3}
+  - {fileID: 4692225461063025399, guid: e0e2af52ffd93914a841e084b1b39927, type: 3}

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theXGrid: 6
   theYGrid: 6
-  spawnPrefab: {fileID: 2392433106439533288, guid: 1a26ecfe9eb5cda42833d4a5e4730e77,
+  spawnPrefab: {fileID: 3812192407826420416, guid: cb74e04bbba4ad94a9e3625622341301,
     type: 3}
   gridOrigin: {x: 0, y: 0, z: 0}
   theXGridWall: 4
