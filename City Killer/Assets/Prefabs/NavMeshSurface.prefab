@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8219202843967799845
+--- !u!1 &8517154048439125449
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,55 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8219202843967799847}
-  - component: {fileID: 8219202843967799846}
+  - component: {fileID: 8517154048439125455}
+  - component: {fileID: 8517154048439125448}
   m_Layer: 0
-  m_Name: BuildingCluster
+  m_Name: NavMeshSurface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8219202843967799847
+--- !u!4 &8517154048439125455
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8219202843967799845}
+  m_GameObject: {fileID: 8517154048439125449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.343212, y: 0.5, z: -0.3647604}
+  m_LocalPosition: {x: 0, y: 0, z: 26.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8219202843967799846
+--- !u!114 &8517154048439125448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8219202843967799845}
+  m_GameObject: {fileID: 8517154048439125449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a015de9f1201f2c4a9d2cb775418b20f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3df27b9289d1e8c4fb82e0df4f4673ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theXGrid: 6
-  theYGrid: 6
-  spawnPrefab: {fileID: 8098723102469961255, guid: 1a26ecfe9eb5cda42833d4a5e4730e77,
-    type: 3}
-  gridOrigin: {x: 0, y: 0, z: 0}
-  theXGridWall: 1
-  theYGridWall: 1
-  spawnPrefabWall: {fileID: 6223360123215989875, guid: ea2834d7df3536f40a8409cdc05d4368,
-    type: 3}
-  gridOriginWall: {x: 0, y: 0, z: 0}
-  spaceBetweenTheBuildings: 2.2
-  generateOnEnable: 1
-  NavMeshSurface: {fileID: 0}
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}

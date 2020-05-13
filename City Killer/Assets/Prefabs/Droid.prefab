@@ -263,7 +263,7 @@ NavMeshAgent:
   m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -317,7 +317,7 @@ MonoBehaviour:
   nav: {fileID: 7163141468408888581}
   originalSpeed: 5
   speed: 20
-  baseLocation: {x: 1, y: 0, z: 36}
+  baseLocation: {x: 1, y: 0, z: 75}
 --- !u!114 &7163141468408881913
 MonoBehaviour:
   m_ObjectHideFlags: 0

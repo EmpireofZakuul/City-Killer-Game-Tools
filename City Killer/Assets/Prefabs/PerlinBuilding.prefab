@@ -61,5 +61,4 @@ MonoBehaviour:
   - {fileID: 9116967723011002701, guid: 35a237f7460f82f4e8e6ac8046324464, type: 3}
   - {fileID: 7760295032323915664, guid: a9bc946464a0d1d42b77138dd05f7d89, type: 3}
   topBuildingParts:
-  - {fileID: 6168201139567883599, guid: 1d9898fb3fff79a4bbe0a03e7b825cdb, type: 3}
   - {fileID: 4464946548176122329, guid: a6b780e9f297d1f49979daf6fbf9fa46, type: 3}

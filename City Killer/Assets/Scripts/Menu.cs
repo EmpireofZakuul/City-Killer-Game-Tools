@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour
     public Button QuitGame;
     public Button HowTo;
     public Button ReturnMainMenu;
+    public Button credits;
 
     public SceneFader SceneFader;
 
@@ -41,6 +42,10 @@ public class Menu : MonoBehaviour
         SceneFader.FadTo("HowToPlay");
     }
 
+    public void GoToCredits()
+    {
+        SceneFader.FadTo("Credits");
+    }
 
     public void QuitGameMenu()
     {
