@@ -28,8 +28,8 @@ public class EnemyMovement : MonoBehaviour
        // basePlayer = BaseManager.instance.Base.transform;// geting the bases singleton
         nav.GetComponent<NavMeshAgent>();
             originalSpeed = maxSpeed;
-
-       // nav.destination = basePlayer.position;
+        three_point_wavespawner.Enemiesalive++;
+        // nav.destination = basePlayer.position;
     }
 
     // Update is called once per frame
@@ -108,8 +108,9 @@ public class EnemyMovement : MonoBehaviour
 
         if (other.tag == "Base")
         {
-           
-            waveSpawner.Enemiesalive--;
+
+            //waveSpawner.Enemiesalive--;
+            three_point_wavespawner.Enemiesalive--;
             Destroy(gameObject);
         }
 

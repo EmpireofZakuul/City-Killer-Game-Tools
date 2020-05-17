@@ -67,7 +67,8 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        waveSpawner.Enemiesalive--;
+        //waveSpawner.Enemiesalive--;
+        three_point_wavespawner.Enemiesalive--;
         Destroy(gameObject);
         dead = false;
        

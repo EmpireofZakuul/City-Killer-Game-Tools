@@ -32,18 +32,18 @@ public class bulletPlayer : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         EnemyHealth enemy = other.GetComponent<EnemyHealth>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage2(damage);
-            Destroy(gameObject, .1f);
-        }
-        /*
         if (other.gameObject.tag == "Enemy")
         {
-            EnemyHealth.health -= 12f;
-            //Damage();
+            if (enemy != null)
+            {
+                enemy.TakeDamage2(damage);
+             
+                Destroy(gameObject, .1f);
+               
+            }
         }
-        */
+       
+    
         if (other.gameObject.tag == "Player")
         {
             PlayerHealth.health -= damagePlay;

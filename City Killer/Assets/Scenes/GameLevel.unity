@@ -320,10 +320,10 @@ GameObject:
   - component: {fileID: 318211358}
   - component: {fileID: 318211360}
   - component: {fileID: 318211357}
-  - component: {fileID: 318211361}
   - component: {fileID: 318211362}
   - component: {fileID: 318211363}
   - component: {fileID: 318211359}
+  - component: {fileID: 318211364}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -365,20 +365,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318211356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cf4b299824ffd64c90aeff792eb677f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 7163141468408881915, guid: a99b348018d4a7d4b80fe4584fe8e0b0, type: 3}
-    count: 3
-    rate: 3
+    count: 1
+    rate: 1
   - enemy: {fileID: 7163141468408881915, guid: a99b348018d4a7d4b80fe4584fe8e0b0, type: 3}
-    count: 6
-    rate: 3
-  timeBetweenWave: 15
-  countdown: 25
+    count: 2
+    rate: 2
+  timeBetweenWave: 10
+  countdown: 20
   EnemySpawnPoint: {fileID: 190927487}
   EnemySpawnPoint2: {fileID: 665806791}
   EnemySpawnPoint3: {fileID: 1123477989}
@@ -400,20 +400,6 @@ MonoBehaviour:
   generatedObjects: []
   perlinGenerator: {fileID: 1186624686}
   gridSpawner: {fileID: 424847970}
---- !u!114 &318211361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318211356}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1acf42e51c9b3e240a8341f30a59017c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraOne: {fileID: 342361898}
-  cameraTwo: {fileID: 1208658960}
 --- !u!114 &318211362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +430,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMoney: 400
   startHealth: 20
+--- !u!114 &318211364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318211356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2921f0618f865d6459ba6891177919fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  any: 0
+  waves:
+  - enemy: {fileID: 7163141468408881915, guid: a99b348018d4a7d4b80fe4584fe8e0b0, type: 3}
+    count: 1
+    rate: 1
+  - enemy: {fileID: 7163141468408881915, guid: a99b348018d4a7d4b80fe4584fe8e0b0, type: 3}
+    count: 2
+    rate: 1
+  - enemy: {fileID: 7163141468408881915, guid: a99b348018d4a7d4b80fe4584fe8e0b0, type: 3}
+    count: 3
+    rate: 1
+  - enemy: {fileID: 7163141468408881915, guid: a99b348018d4a7d4b80fe4584fe8e0b0, type: 3}
+    count: 4
+    rate: 2
+  timeBetweenWave: 5
+  countdown: 15
+  EnemySpawnPoint: {fileID: 190927487}
+  EnemySpawnPoint2: {fileID: 665806791}
+  EnemySpawnPoint3: {fileID: 1123477989}
+  WaitTime: 1.5
+  CountDownTimer: {fileID: 853874221}
+  gameManager: {fileID: 0}
+  SceneFader: {fileID: 4260387520048949452}
 --- !u!1 &342361898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,6 +1613,7 @@ MonoBehaviour:
   baseHealth: 10
   health: 0
   Lost: 0
+  SceneFader: {fileID: 4260387520048949452}
 --- !u!1 &1115580263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,7 +2576,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 0
     m_CustomResolution: -1
     m_Strength: 0.2
@@ -3030,6 +3052,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d543a5aa6a0e3544bb3b2ad7da5c8de, type: 3}
+--- !u!114 &4260387520048949452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4260387522038692637, guid: 5d543a5aa6a0e3544bb3b2ad7da5c8de,
+    type: 3}
+  m_PrefabInstance: {fileID: 4260387520048949451}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cabe84ef4f8a2184391c5f01d659bd12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8517154048412575259
 PrefabInstance:
   m_ObjectHideFlags: 0

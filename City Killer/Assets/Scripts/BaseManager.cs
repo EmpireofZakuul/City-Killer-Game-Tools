@@ -9,6 +9,7 @@ public class BaseManager : MonoBehaviour
     public int baseHealth = 10;
     public  int health;
     public bool Lost = false;
+    public SceneFader SceneFader;
     public void Start()
     {
         //baseHealth = 10;
@@ -22,7 +23,8 @@ public class BaseManager : MonoBehaviour
         if (baseHealth <= 0 && !Lost)
         {
             
-            SceneManager.LoadScene("Lose");
+            //SceneManager.LoadScene("Lose");
+            SceneFader.FadTo("Lose");
             Lost = true;
         }
     }
