@@ -763,6 +763,7 @@ MonoBehaviour:
   QuitGame: {fileID: 0}
   HowTo: {fileID: 0}
   ReturnMainMenu: {fileID: 1170272633}
+  credits: {fileID: 0}
   SceneFader: {fileID: 0}
 --- !u!4 &1661969573
 Transform:
@@ -933,7 +934,12 @@ MonoBehaviour:
 
 
     When the player gets close
-    to enemies, to shot the charcter''s weapon, use the left use button.'
+    to enemies, to shot the charcter''s weapon, use the left use button.
+
+
+    The
+    player has use of grenades in the game, to throw a grenade, the player uses the
+    right mouse button to throw it.'
 --- !u!222 &2082120166
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class GridSpawner : MonoBehaviour
     public void Generate()
     {
         SpawnGrid();
-        SpawnGridWalls();
+        //SpawnGridWalls();
     }
 
 
@@ -51,7 +51,7 @@ public class GridSpawner : MonoBehaviour
         
     }
 
-    void SpawnGridWalls()
+    /*void SpawnGridWalls()
     {
         for (int x = 0; x < theXGridWall; x++)
         {
@@ -65,6 +65,7 @@ public class GridSpawner : MonoBehaviour
 
 
     }
+    */
 
 
 

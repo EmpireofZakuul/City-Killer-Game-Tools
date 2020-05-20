@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
     public void PlayGamelevel()
     {
         //SceneManager.LoadScene("GameLevel");
-        SceneFader.FadTo("GameLevel");
+        SceneFader.FadTo("Loading");
     }
 
     public void GameMenuCredits()
