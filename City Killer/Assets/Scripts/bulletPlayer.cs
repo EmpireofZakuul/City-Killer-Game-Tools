@@ -10,12 +10,14 @@ public class bulletPlayer : MonoBehaviour
 
     public static int Damage;
     public int damagePlay = 1;
+  
 
     private Transform enemy;
     void Start()
     {
         BulletDamage = damage;
         Damage = damagePlay;
+      
 
     }
 
@@ -36,6 +38,7 @@ public class bulletPlayer : MonoBehaviour
         {
             if (enemy != null)
             {
+               
                 enemy.TakeDamage2(damage);
              
                 Destroy(gameObject, .1f);

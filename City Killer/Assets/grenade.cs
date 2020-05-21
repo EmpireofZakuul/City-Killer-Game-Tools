@@ -11,6 +11,7 @@ public class grenade : MonoBehaviour
     bool hasexploded = false;
     public static int BulletDamage;
     public int damage = 1;
+    public Transform explosionEffect;
     public AudioSource source;
     public AudioClip shot;
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class grenade : MonoBehaviour
     public void Explode()
     {
         source.Play();
+        Instantiate(explosionEffect, transform.position, transform.rotation);
         Collider[] coll = Physics.OverlapSphere(transform.position, BlowRadius);
 
         for (int i  = 0; i < coll.Length; i++)

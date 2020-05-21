@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
     bool Death = true;
     public GameObject thisEnemy;
     public bool dead = true;
+   
 
 
 
@@ -22,6 +23,8 @@ public class EnemyHealth : MonoBehaviour
     {
         HealthBar = GetComponent<Image>();
         //health = maxHealth;
+    
+        
     }
 
     // Update is called once per frame
@@ -60,7 +63,7 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= damage;
         dead = true;
-
+       
 
         Debug.Log("damage Taken");
     }
