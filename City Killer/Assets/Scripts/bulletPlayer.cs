@@ -9,7 +9,7 @@ public class bulletPlayer : MonoBehaviour
     public int damage = 1;
 
     public static int Damage;
-    public int damagePlay = 1;
+    public int damagePlay = 3;
   
 
     private Transform enemy;

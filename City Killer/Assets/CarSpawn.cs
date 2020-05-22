@@ -61,8 +61,8 @@ public class CarSpawn : MonoBehaviour
         navNpc = GetComponent<NavMeshAgent>();
 
         // toatl waypoints eqauls to the number of waypoints minus one
-        NpcMaxWaypoint = waypoints.Length - 1;
-
+       NpcMaxWaypoint = waypoints.Length - 1;
+       
 
     }
 
@@ -102,7 +102,10 @@ public class CarSpawn : MonoBehaviour
             else
 
                 // or move to the next waypoint
-                NpcCurrentWaypoint++;
+                // Random.Range(0,  NpcCurrentWaypoint++);
+                NpcCurrentWaypoint = Random.Range(0, NpcMaxWaypoint);
+                //NpcCurrentWaypoint++;
+
         }
         navNpc.SetDestination(waypoints[NpcCurrentWaypoint].position);
     }
