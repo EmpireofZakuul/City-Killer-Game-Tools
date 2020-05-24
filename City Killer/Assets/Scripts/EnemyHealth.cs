@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
@@ -10,21 +11,27 @@ public class EnemyHealth : MonoBehaviour
     //public float maxHealth = 3f;
     //public static float health;
     public float health = 3f;
-    public Image HealthBar;
+    //public Image HealthBar;
     bool Death = true;
     public GameObject thisEnemy;
     public bool dead = true;
-   
+    public float Health = 3f;
+    public GameObject rididbod;
+
+    public NavMeshAgent navNpc;
+
+
 
 
 
 
     void Start()
     {
-        HealthBar = GetComponent<Image>();
+        // HealthBar = GetComponent<Image>();
         //health = maxHealth;
-    
-        
+
+       
+
     }
 
     // Update is called once per frame
@@ -43,6 +50,15 @@ public class EnemyHealth : MonoBehaviour
             // Death = false;
 
             // }
+
+        }
+        if (Health == 0 )
+        {
+
+        
+            CarDie();
+
+           
 
         }
     }
@@ -68,6 +84,15 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("damage Taken");
     }
 
+    public void TakeDamage3(int damage)
+    {
+        Health -= damage;
+        dead = true;
+
+
+        Debug.Log("damage car");
+    }
+
     void Die()
     {
         //waveSpawner.Enemiesalive--;
@@ -75,6 +100,18 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);
         dead = false;
        
+    }
+
+    void CarDie()
+    {
+        rididbod.GetComponentInChildren<Rigidbody>().useGravity = true;
+        thisEnemy.GetComponent<NavMeshAgent>().velocity = Vector3.zero;
+        navNpc.isStopped = true;
+        Destroy(gameObject, 3f);
+            dead = false;
+       
+
+
     }
 
 

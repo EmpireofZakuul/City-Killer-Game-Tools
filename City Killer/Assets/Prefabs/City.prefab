@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8098723102469961249}
   - component: {fileID: 8098723102469961254}
   m_Layer: 0
-  m_Name: PerlinBuilding
+  m_Name: City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxNumberOfPieces: 20
-  perlinScaleFactor: 10
-  randomVariationMin: 0
-  randomVariationMax: 0
+  perlinScale: 10
+  randomMin: 0
+  randomMax: 0
   baseBuildingParts:
   - {fileID: 2711963080500166116, guid: 0c334146e698d1b4fa447e2ecba6bc22, type: 3}
   - {fileID: 2146439643462198329, guid: a87464fcabfc16048b4d40bf0bc07962, type: 3}

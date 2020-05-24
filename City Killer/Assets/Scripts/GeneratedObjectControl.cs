@@ -7,8 +7,8 @@ public class GeneratedObjectControl : MonoBehaviour
     public static GeneratedObjectControl instance;
     public List<GameObject> generatedObjects = new List<GameObject>();
 
-    public PerlinNoise perlinGenerator;
-    public GridSpawner gridSpawner;
+    public PerlinNoise perlinTextureGenerator;
+    public GridSpawner gridSpawnerLayout;
 
     void Awake()
     {
@@ -24,7 +24,7 @@ public class GeneratedObjectControl : MonoBehaviour
 
     public void Start()
     {
-        Generate();
+        GenerateManager();
     }
 
     public void AddObject(GameObject objectToAdd)
@@ -35,33 +35,14 @@ public class GeneratedObjectControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.T))
-       // {
-            //ClearAllObjects();
-           // Generate();
-
-        //}
-
-       // if (Input.GetKeyDown(KeyCode.R))
-       //// {
-            //SceneManager.LoadScene(0);
-       // }
-
     }
 
-    void Generate()
+    void GenerateManager()
     {
-        perlinGenerator.Generate();
-        gridSpawner.Generate();
+        perlinTextureGenerator.GenerateOnPlay();
+        gridSpawnerLayout.GeneratePlay();
     }
 
 
-    void ClearAllObjects()
-    {
-        for (int i = generatedObjects.Count - 1; i >= 0; i--)
-        {
-            generatedObjects[i].SetActive(false);
-            generatedObjects.RemoveAt(i);
-        }
-    }
+   
 }

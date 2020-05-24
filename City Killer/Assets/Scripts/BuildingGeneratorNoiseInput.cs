@@ -5,55 +5,55 @@ using UnityEngine;
 public class BuildingGeneratorNoiseInput : MonoBehaviour
 {
     public int maxNumberOfPieces = 20;
-    public float perlinScaleFactor = 2f;
+    public float perlinScale = 2f;
 
-    public int randomVariationMin = -5;
-    public int randomVariationMax = 10;
+    public int randomMin = -5;
+    public int randomMax = 10;
     public GameObject[] baseBuildingParts;
     public GameObject[] middleBuildingParts;
     public GameObject[] topBuildingParts;
 
     void Start()
     {
-        Build();
+        BuildCity();
     }
 
 
-    public void Build()
+    public void BuildCity()
     {
         float sampledValue = PerlinNoise.instance.PerlinSteppedPosition(transform.position);
 
-        int targetPieces = Mathf.FloorToInt(maxNumberOfPieces * (sampledValue));
-        targetPieces += Random.Range(randomVariationMin, randomVariationMax);
+        int Pieces = Mathf.FloorToInt(maxNumberOfPieces * (sampledValue));
+        Pieces += Random.Range(randomMin, randomMax);
 
-        if (targetPieces <= 0)
+        if (Pieces <= 0)
         {
             return;
         }
 
-        float heightOffset = 0;
-        heightOffset += SpawnPieceLayer(baseBuildingParts, heightOffset);
+        float heightBuildings = 0;
+        heightBuildings += SpawnLayout(baseBuildingParts, heightBuildings);
 
-        for (int i = 2; i < targetPieces; i++)
+        for (int i = 2; i < Pieces; i++)
         {
-            heightOffset += SpawnPieceLayer(middleBuildingParts, heightOffset);
+            heightBuildings += SpawnLayout(middleBuildingParts, heightBuildings);
         }
 
-        SpawnPieceLayer(topBuildingParts, heightOffset);
+        SpawnLayout(topBuildingParts, heightBuildings);
     }
 
-    float SpawnPieceLayer(GameObject[] pieceArray, float inputHeight)
+    float SpawnLayout(GameObject[] ArrayPieces, float inputHeight)
     {
-        Transform randomTransform = pieceArray[Random.Range(0, pieceArray.Length)].transform;
-        GameObject clone = Instantiate(randomTransform.gameObject, this.transform.position + new Vector3(0, inputHeight, 0), transform.rotation) as GameObject;
-        Mesh cloneMesh = clone.GetComponentInChildren<MeshFilter>().mesh;
+        Transform randomTransform = ArrayPieces[Random.Range(0, ArrayPieces.Length)].transform;
+        GameObject cloneSpawn = Instantiate(randomTransform.gameObject, this.transform.position + new Vector3(0, inputHeight, 0), transform.rotation) as GameObject;
+        Mesh cloneMesh = cloneSpawn.GetComponentInChildren<MeshFilter>().mesh;
         Bounds baseBounds = cloneMesh.bounds;
-        float heightOffset = baseBounds.size.y;
+        float OffsetHeight = baseBounds.size.y;
 
-        clone.transform.SetParent(this.transform);
+        cloneSpawn.transform.SetParent(this.transform);
 
-        GeneratedObjectControl.instance.AddObject(clone);
+        GeneratedObjectControl.instance.AddObject(cloneSpawn);
 
-        return heightOffset;
+        return OffsetHeight;
     }
 }

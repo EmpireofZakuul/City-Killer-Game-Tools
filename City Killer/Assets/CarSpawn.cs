@@ -35,7 +35,7 @@ public class CarSpawn : MonoBehaviour
     }
     */
     // stating the navemensh agent
-    private NavMeshAgent navNpc;
+    public NavMeshAgent navNpc;
 
     //speed of the Npc
     public float NpcSpeed = 2.0f;
@@ -62,7 +62,7 @@ public class CarSpawn : MonoBehaviour
 
         // toatl waypoints eqauls to the number of waypoints minus one
        NpcMaxWaypoint = waypoints.Length - 1;
-       
+        //NpcCurrentWaypoint = Random.Range(0, waypoints.Length);
 
     }
 

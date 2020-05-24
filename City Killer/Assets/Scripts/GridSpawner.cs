@@ -5,46 +5,46 @@ using UnityEngine.AI;
 
 public class GridSpawner : MonoBehaviour
 {
-    public int theXGrid = 4;
-    public int theYGrid = 4;
-    public GameObject spawnPrefab;
-    public Vector3 gridOrigin = Vector3.zero;
+    public int theXAxisGrid = 4;
+    public int theYAxisGrid = 4;
+    public GameObject spawnBuildingPrefab;
+    public Vector3 OriginOfTheGrid = Vector3.zero;
     //wall grid and prefabs
-    public int theXGridWall = 4;
-    public int theYGridWall = 4;
-    public GameObject spawnPrefabWall;
-    public Vector3 gridOriginWall = Vector3.zero;
+    //public int theXGridWall = 4;
+   // public int theYGridWall = 4;
+    //public GameObject spawnPrefabWall;
+   // public Vector3 gridOriginWall = Vector3.zero;
 
     public float spaceBetweenTheBuildings = 2f;
-    public bool generateOnEnable;
+    public bool generateOnEnableGame;
     public GameObject NavMeshSurface;
 
 
     void OnEnable()
     {
-        if (generateOnEnable)
+        if (generateOnEnableGame)
         {
-            Generate();
+            GeneratePlay();
             
         }
     }
 
-    public void Generate()
+    public void GeneratePlay()
     {
-        SpawnGrid();
+        SpawnGridCity();
         //SpawnGridWalls();
     }
 
 
-    void SpawnGrid()
+    void SpawnGridCity()
     {
-        for (int x = 0; x < theXGrid; x++)
+        for (int x = 0; x < theXAxisGrid; x++)
         {
-            for (int z = 0; z < theYGrid; z++)
+            for (int z = 0; z < theYAxisGrid; z++)
             {
-                GameObject clone = Instantiate(spawnPrefab,
-                    transform.position + gridOrigin + new Vector3(spaceBetweenTheBuildings * x, 0, spaceBetweenTheBuildings * z), transform.rotation);
-                clone.transform.SetParent(this.transform);
+                GameObject Prefabclone = Instantiate(spawnBuildingPrefab,
+                    transform.position + OriginOfTheGrid + new Vector3(spaceBetweenTheBuildings * x, 0, spaceBetweenTheBuildings * z), transform.rotation);
+                Prefabclone.transform.SetParent(this.transform);
             }
         }
 

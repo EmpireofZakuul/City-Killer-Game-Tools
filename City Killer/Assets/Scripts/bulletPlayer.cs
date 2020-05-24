@@ -45,8 +45,20 @@ public class bulletPlayer : MonoBehaviour
                
             }
         }
-       
-    
+
+        if (other.gameObject.tag == "Car")
+        {
+            if (enemy != null)
+            {
+
+                enemy.TakeDamage3(damage);
+
+                Destroy(gameObject, .1f);
+
+            }
+        }
+
+
         if (other.gameObject.tag == "Player")
         {
             PlayerHealth.health -= damagePlay;

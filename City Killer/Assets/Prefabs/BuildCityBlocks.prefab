@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8219202843967799847}
-  - component: {fileID: 8219202843967799846}
+  - component: {fileID: 7340527368446456115}
   m_Layer: 0
-  m_Name: BuildingCluster
+  m_Name: BuildCityBlocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8219202843967799846
+--- !u!114 &7340527368446456115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,13 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theXGrid: 4
   theYGrid: 4
-  spawnPrefab: {fileID: 8098723102469961255, guid: 1a26ecfe9eb5cda42833d4a5e4730e77,
+  spawnBuildingPrefab: {fileID: 8098723102469961255, guid: 1a26ecfe9eb5cda42833d4a5e4730e77,
     type: 3}
-  gridOrigin: {x: 0, y: 0, z: 0}
-  theXGridWall: 1
-  theYGridWall: 1
+  OriginOfTheGrid: {x: 0, y: 0, z: 0}
+  theXGridWall: 0
+  theYGridWall: 0
   spawnPrefabWall: {fileID: 0}
   gridOriginWall: {x: 0, y: 0, z: 0}
   spaceBetweenTheBuildings: 2.2
-  generateOnEnable: 1
+  generateOnEnableGame: 1
   NavMeshSurface: {fileID: 0}
