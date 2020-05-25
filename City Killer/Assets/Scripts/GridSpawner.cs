@@ -9,9 +9,11 @@ public class GridSpawner : MonoBehaviour
     public int theYAxisGrid = 4;
     public GameObject spawnBuildingPrefab;
     public Vector3 OriginOfTheGrid = Vector3.zero;
-    //wall grid and prefabs
-    //public int theXGridWall = 4;
-   // public int theYGridWall = 4;
+
+
+   //wall grid and prefabs
+  //public int theXGridWall = 4;
+   //public int theYGridWall = 4;
     //public GameObject spawnPrefabWall;
    // public Vector3 gridOriginWall = Vector3.zero;
 
@@ -25,7 +27,7 @@ public class GridSpawner : MonoBehaviour
         if (generateOnEnableGame)
         {
             GeneratePlay();
-            
+
         }
     }
 
@@ -48,26 +50,46 @@ public class GridSpawner : MonoBehaviour
             }
         }
 
-        
+
     }
 
-    /*void SpawnGridWalls()
-    {
-        for (int x = 0; x < theXGridWall; x++)
+    //void SpawnGridWalls()
+   // {
+       // for (int x = 0; x < theXGridWall; x++)
+       // {
+        // for (int z = 0; z < theYGridWall; z++)
+       // {
+        // GameObject clone = Instantiate(spawnPrefabWall,
+        // transform.position + gridOriginWall + new Vector3( 0, 0, 0), transform.rotation);
+       // clone.transform.SetParent(this.transform);
+
+
+      //  }
+       // }
+
+      /* for (int i = -7; i < 8; i += 14)
         {
-            for (int z = 0; z < theYGridWall; z++)
+            for (int j = -7; j < 8; j += 1)
             {
-                GameObject clone = Instantiate(spawnPrefabWall,
-                    transform.position + gridOriginWall + new Vector3( 0, 0, 0), transform.rotation);
-                clone.transform.SetParent(this.transform);
+                //GameObject clone = Instantiate(spawnPrefabWall,
+        //transform.position + gridOriginWall + new Vector3(i, 0, j), transform.rotation);
+               // clone.transform.SetParent(this.transform);
+
+                Instantiate(spawnPrefabWall, new Vector3(i, 0.05f, j), Quaternion.identity);
+            }
+            for (int j = -6; j < 7; j += 1)
+            {
+               // GameObject clone = Instantiate(spawnPrefabWall,
+       //  transform.position + gridOriginWall + new Vector3(j, 0, i), transform.rotation);
+              //  clone.transform.SetParent(this.transform);
+
+                Instantiate(spawnPrefabWall, new Vector3(i, 0.05f, j), Quaternion.identity);
             }
         }
 
 
     }
     */
-
-
-
-
+    
+    
 }

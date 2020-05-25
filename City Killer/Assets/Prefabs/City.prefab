@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxNumberOfPieces: 20
   perlinScale: 10
-  randomMin: 0
+  randomMin: 3
   randomMax: 0
   baseBuildingParts:
   - {fileID: 2711963080500166116, guid: 0c334146e698d1b4fa447e2ecba6bc22, type: 3}

@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject rididbod;
 
     public NavMeshAgent navNpc;
+   // public Transform explosionEffect;
 
 
 
@@ -39,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
     {
 
 
-        if (health == 0 && dead == true)
+        if (health <= 0 && dead == true)
         {
             Die();
 
@@ -52,7 +53,7 @@ public class EnemyHealth : MonoBehaviour
             // }
 
         }
-        if (Health == 0 )
+        if (Health <= 0 )
         {
 
         
@@ -104,10 +105,11 @@ public class EnemyHealth : MonoBehaviour
 
     void CarDie()
     {
+       // Instantiate(explosionEffect, transform.position, transform.rotation);
         rididbod.GetComponentInChildren<Rigidbody>().useGravity = true;
-        thisEnemy.GetComponent<NavMeshAgent>().velocity = Vector3.zero;
+        //thisEnemy.GetComponent<NavMeshAgent>().velocity = Vector3.zero;
         navNpc.isStopped = true;
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 2f);
             dead = false;
        
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class grenade : MonoBehaviour
 {
-    public float BlowRadius = 15f;
+    public float BlowRadius = 16f;
     public float expolsiveForce = 20f;
     public float delay = 3f;
     private float countdown;
