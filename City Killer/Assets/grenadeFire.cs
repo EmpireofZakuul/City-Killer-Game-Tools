@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class grenadeFire : MonoBehaviour
 {
@@ -15,23 +16,35 @@ public class grenadeFire : MonoBehaviour
     public Rigidbody Grenade;
     public float speed = 20;
     public Transform Hand;
-  
+    public int Grenadeamound = 5;
+    public Text grenades;
+
+
+    public void Start()
+    {
+        
+    }
     // Start is called before the first frame update
     void Update()
     {
-
-
-
-        if (Input.GetButton("Fire2") && Time.time >= nextTimeToFire)
-        //if (Input.GetKeyDown(KeyCode.F) && Time.time >= nextTimeToFire)
+        grenades.text = Grenadeamound.ToString();
+        if (Grenadeamound > 0)
         {
-            nextTimeToFire = Time.time + 1 / fireRate;
-            Shoot();
+
+
+
+            if (Input.GetButton("Fire2") && Time.time >= nextTimeToFire)
+            //if (Input.GetKeyDown(KeyCode.F) && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1 / fireRate;
+                Shoot();
+            }
         }
 
     }
     public void Shoot()
     {
+        Grenadeamound--;
         
         // Rigidbody instantiatedProjectile = Instantiate(Grenade, transform.position, transform.rotation) as Rigidbody;
         // instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
