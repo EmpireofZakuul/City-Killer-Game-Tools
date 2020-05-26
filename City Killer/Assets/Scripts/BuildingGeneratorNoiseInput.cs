@@ -21,7 +21,7 @@ public class BuildingGeneratorNoiseInput : MonoBehaviour
 
     public void BuildCity()
     {
-        float sampledValue = PerlinNoise.instance.PerlinSteppedPosition(transform.position);
+        float sampledValue = PerlinNoise.instance.Perlin(transform.position);
 
         int Pieces = Mathf.FloorToInt(maxNumberOfPieces * (sampledValue));
         Pieces += Random.Range(randomMin, randomMax);

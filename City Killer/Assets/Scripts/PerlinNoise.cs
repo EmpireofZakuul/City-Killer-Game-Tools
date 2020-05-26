@@ -80,7 +80,7 @@ public class PerlinNoise : MonoBehaviour
         return ColorOfThePerlin;
     }
 
-    public float SampleStepped(int x, int y)
+    public float SampleNoise(int x, int y)
     {
         int gridStepSizeX = TheXAxisOfThePerlinTextureImage / TheGridSizePerlinNoiseXAxis;
         int gridStepSizeY = TheYAxisOfThePerlinTextureImage / TheGridSizePerlinNoiseYAxis;
@@ -91,7 +91,7 @@ public class PerlinNoise : MonoBehaviour
         return sampledFloat;
     }
 
-    public float PerlinSteppedPosition(Vector3 worldPosition)
+    public float Perlin(Vector3 worldPosition)
     {
         int SampleTheX = Mathf.FloorToInt(worldPosition.x + TheGridSizePerlinNoiseXAxis * .5f);
         int SampleTheY = Mathf.FloorToInt(worldPosition.z + TheGridSizePerlinNoiseYAxis * .5f);
@@ -99,7 +99,7 @@ public class PerlinNoise : MonoBehaviour
         SampleTheX = SampleTheX % TheGridSizePerlinNoiseXAxis;
         SampleTheY = SampleTheY % TheGridSizePerlinNoiseYAxis;
 
-        float sampledValue = SampleStepped(SampleTheX, SampleTheY);
+        float sampledValue = SampleNoise(SampleTheX, SampleTheY);
 
         return sampledValue;
     }
@@ -114,7 +114,7 @@ public class PerlinNoise : MonoBehaviour
             for (int y = 0; y < TheGridSizePerlinNoiseYAxis; y++)
             {
                 GameObject clonePrefab = Instantiate(Cube,
-                    new Vector3(x, SampleStepped(x, y) * TheHieghtOfThePerlinNoiseTexture, y)
+                    new Vector3(x, SampleNoise(x, y) * TheHieghtOfThePerlinNoiseTexture, y)
                     + transform.position, transform.rotation);
 
                 clonePrefab.transform.SetParent(visualGrid.transform);
