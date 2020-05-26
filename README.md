@@ -6,7 +6,7 @@ Link to the youtube video of me failing to win: https://www.youtube.com/watch?v=
 
 How To Play The Game:
 
-1:The game Starts with the Menu scene, After that the player can navigate throughout the other scenes in the game.
+1:The game Starts with the <b>Menu scene</b>, After that the player can navigate throughout the other scenes in the game.
 
 2:The goal of the game, is for the player to survive all of the waves of the enemies. 
 
