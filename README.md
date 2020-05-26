@@ -1,8 +1,8 @@
 # City-Killer-Game-Tools
 
-Link to the youtube video: https://www.youtube.com/watch?v=5nBSk_XKDMY
+Link to the youtube video: https://www.youtube.com/watch?v=RSPjPzdclHI
 
-Link to the youtube video of me failing to win: https://www.youtube.com/watch?v=i5sXdBa1De4
+Link to the youtube video of me failing to win: https://www.youtube.com/watch?v=ltPhyZAPpd4&t=91s
 
 How To Play The Game:
 
