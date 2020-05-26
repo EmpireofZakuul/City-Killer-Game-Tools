@@ -748,7 +748,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 45
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -763,26 +763,32 @@ MonoBehaviour:
     goal in the game is to survive all the waves of the enemies.
 
 
-    The enemies
-    will spawn in the city and move towards the player''s base, at the edge of the
-    city.
+    There are
+    three types of enemies, the white enemy is the typical shooter, the red enemy
+    is the explosive enemy that will detonate if it gets to close to the player and
+    the turquoise  is the more advanced of the white enemy with increased weaponry
+    and health.
 
 
-    If the base is destroyed or the player loses all his health, then
-    the player will lose the game.
+    The enemies will spawn in the city and move towards the player''s
+    base, at the edge of the city.
 
 
-    If the player defeates all the waves of
-    enemies, then the player will win the game.
+    If the base is destroyed or the player loses
+    all his health, then the player will lose the game.
 
 
-    The player in the game will
-    have access to grenades and a weapon to defeate the Incoming waves of enemies.
+    If the player defeates
+    all the waves of enemies, then the player will win the game.
 
 
-    The
-    player in the game can also shot down the flying car that are flying around the
-    map.
+    The player
+    in the game will have access to grenades and a weapon to defeate the Incoming
+    waves of enemies.
+
+
+    The player in the game can also shot down the flying
+    car that are flying around the map.
 
 '
 --- !u!222 &1335480579

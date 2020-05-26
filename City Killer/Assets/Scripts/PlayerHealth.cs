@@ -50,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
     */
     void Die()
     {
-        if (health < 0 && !Death)
+        if (health <= 0 && !Death)
         {
 
             SceneManager.LoadScene("Lose");

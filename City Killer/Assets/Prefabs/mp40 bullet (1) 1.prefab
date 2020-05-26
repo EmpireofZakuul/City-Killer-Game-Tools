@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9218472181291492967}
   - component: {fileID: 9218472181291492984}
   - component: {fileID: 9218472181291492985}
-  - component: {fileID: 9218472181291492986}
+  - component: {fileID: -7267180431574265274}
   m_Layer: 0
   m_Name: mp40 bullet (1) 1
   m_TagString: Bullet
@@ -112,7 +112,7 @@ CapsuleCollider:
   m_Height: 0.00030467837
   m_Direction: 1
   m_Center: {x: 0.00004547744, y: 0, z: 0}
---- !u!114 &9218472181291492986
+--- !u!114 &-7267180431574265274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
