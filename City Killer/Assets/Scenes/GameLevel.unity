@@ -842,10 +842,10 @@ MonoBehaviour:
     rate: 2
   - enemy: {fileID: 327582388058615982, guid: 3e332d79d2784504a878664274a2ec58, type: 3}
     count: 3
-    rate: 2
+    rate: 1
   - enemy: {fileID: 6029149964079350832, guid: 685cc7cc66bedee4f8697c096c1401d6, type: 3}
     count: 4
-    rate: 2
+    rate: 1
   timeBetweenWave: 10
   countdown: 20
   EnemySpawnPoint: {fileID: 190927487}
@@ -2849,7 +2849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
