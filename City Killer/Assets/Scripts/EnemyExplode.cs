@@ -151,7 +151,7 @@ public class EnemyExplode : MonoBehaviour
             }
             three_point_wavespawner.Enemiesalive--;
             Debug.Log("boom");
-            Destroy(gameObject,.5f);
+            Destroy(gameObject, .5f);
         
         
     }
