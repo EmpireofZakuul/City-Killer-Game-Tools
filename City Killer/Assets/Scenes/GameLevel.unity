@@ -469,8 +469,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130598519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -98.6002, y: 0, z: 0.28607792}
-  m_LocalScale: {x: 1, y: 1, z: 0.42588007}
+  m_LocalPosition: {x: -98.6, y: 0, z: 0.2884}
+  m_LocalScale: {x: 1, y: 1, z: 0.430437}
   m_Children:
   - {fileID: 157492594}
   m_Father: {fileID: 1272549503}
@@ -580,8 +580,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157492589}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00038146973, y: 0, z: -1.2882415}
-  m_LocalScale: {x: 1, y: 1, z: 1.1095264}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2963}
+  m_LocalScale: {x: 1, y: 1, z: 1.1255035}
   m_Children:
   - {fileID: 1001939430}
   m_Father: {fileID: 130598524}
@@ -1169,7 +1169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 51, y: 0}
+  m_AnchoredPosition: {x: 70, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &438067442
@@ -1192,7 +1192,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1200,8 +1200,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 00
 --- !u!222 &438067443
@@ -1446,7 +1446,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1454,8 +1454,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Grenades
 --- !u!222 &541711000
@@ -1653,7 +1653,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1661,8 +1661,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 00
 --- !u!222 &746067868
@@ -2069,7 +2069,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 15
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -2077,8 +2077,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 00
 --- !u!222 &853874222
@@ -3335,17 +3335,13 @@ MonoBehaviour:
   navNpc: {fileID: 1194749042}
   NpcSpeed: 6
   waypoints:
-  - {fileID: 897924357}
-  - {fileID: 2031473915}
-  - {fileID: 1621626614}
-  - {fileID: 493874868}
-  - {fileID: 665091179}
-  - {fileID: 1530007570}
-  - {fileID: 1704996129}
-  - {fileID: 1201558981}
-  - {fileID: 330717741}
-  - {fileID: 1210820963}
+  - {fileID: 48027999}
   - {fileID: 1626929830}
+  - {fileID: 2031473915}
+  - {fileID: 1704996129}
+  - {fileID: 1621626614}
+  - {fileID: 1530007570}
+  - {fileID: 1210820963}
   NpcToWaypointDistance: 1
 --- !u!195 &1194749042
 NavMeshAgent:
@@ -3847,8 +3843,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272549498}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 39, y: 0.004999995, z: -0.49199995}
-  m_LocalScale: {x: 0.01, y: 1, z: 77}
+  m_LocalPosition: {x: 39.108, y: 0.004999995, z: -0.49199995}
+  m_LocalScale: {x: 0.01, y: 1, z: 77.76017}
   m_Children:
   - {fileID: 130598524}
   m_Father: {fileID: 1302023681}
@@ -4250,7 +4246,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -4258,8 +4254,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Base Health
 --- !u!222 &1487200996
@@ -4340,7 +4336,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -4618,7 +4614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.1, y: 0}
+  m_AnchoredPosition: {x: -36, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671023399
@@ -4641,7 +4637,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 15
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -4649,8 +4645,8 @@ MonoBehaviour:
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Wave Countdown
 --- !u!222 &1671023400
@@ -4818,17 +4814,13 @@ MonoBehaviour:
   navNpc: {fileID: 1760923837}
   NpcSpeed: 6
   waypoints:
-  - {fileID: 2031473915}
-  - {fileID: 897924357}
-  - {fileID: 831212719}
+  - {fileID: 665091179}
+  - {fileID: 1626929830}
   - {fileID: 1621626614}
   - {fileID: 1201558981}
   - {fileID: 493874868}
+  - {fileID: 897924357}
   - {fileID: 1704996129}
-  - {fileID: 665091179}
-  - {fileID: 1530007570}
-  - {fileID: 1626929830}
-  - {fileID: 1210820963}
   NpcToWaypointDistance: 1
 --- !u!82 &1760923840
 AudioSource:
@@ -4954,7 +4946,7 @@ MonoBehaviour:
   health: 3
   thisEnemy: {fileID: 1760923836}
   dead: 1
-  Health: 3
+  Health: 5
   rididbod: {fileID: 1194973868}
   navNpc: {fileID: 1760923837}
 --- !u!1 &1974937913
